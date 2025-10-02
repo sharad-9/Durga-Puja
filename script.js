@@ -38,4 +38,37 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
+    // Get the audio element
+const audio = document.getElementById('bg-music');
+
+// Function to play the music and stop listening for interaction
+const startMusic = () => {
+    if (audio && audio.paused) {
+        audio.play().catch(e => console.error("Audio play failed on user interaction attempt.", e));
+    }
+    
+    // Once the event fires, remove the listeners so this code doesn't run again
+    document.removeEventListener('mousedown', startMusic);
+    document.removeEventListener('touchstart', startMusic);
+};
+
+// Start listening for any user interaction on the whole document
+document.addEventListener('mousedown', startMusic);
+document.addEventListener('touchstart', startMusic);
+
+const toggleMusic = () => {
+    // Check if the audio is currently paused
+    if (audio.paused) {
+        // If paused, try to play it
+        audio.play().catch(e => console.error("Could not resume audio.", e));
+    } else {
+        // If playing, pause it
+        audio.pause();
+    }
+};
+
+// Attach the toggle function to the document's double-click event
+// This allows the user to double-click anywhere on the page to turn the music on/off.
+document.addEventListener('dblclick', toggleMusic);
+
 });
