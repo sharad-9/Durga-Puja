@@ -1,7 +1,7 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #6200ffe1; /* Festive Gold */
-    --secondary-color: #6200ffe1; /* Sindoor Red */
+    --secondary-color: #CAA906; /* Festive Gold */
+    --primary-color: #CA2325; /* Sindoor Red */
     --background-color: #FFF8E1; /* Creamy White */
     --text-color: #888080;
     --dark-accent: #ffffff;
@@ -43,6 +43,10 @@ h1, h2, h3 {
     color: white;
 }
 
+#bg-music {
+    display: none;
+}
+
 .parallax-layer {
     position: absolute;
     top: 0;
@@ -54,7 +58,7 @@ h1, h2, h3 {
 }
 /* Artfully chosen images for a layered effect */
 .layer-bg {
-    background-image: linear-gradient(rgb(255, 255, 255, 0.4), rgba(255, 255, 255, 0)), url('https://wallpapers.com/images/hd/kolkata-durga-puja-pandal-byuor98wtzthvoxa.jpg');
+    background-image: linear-gradient(rgb(67 67 67), rgba(255, 255, 255, 0)), url('https://wallpapers.com/images/hd/kolkata-durga-puja-pandal-byuor98wtzthvoxa.jpg');
     z-index: 0;
     opacity: 1;
 
@@ -330,10 +334,10 @@ a {
 }
 
 #darker-text {
-    color: #ffffff;
+    color: #000000;
 }
 #darkerer-text {
-    color: #ffffffd8;
+    color: #302c2c;
     font-size: 24px;
     font-weight: 400;
     font-family: 'Poppins';
